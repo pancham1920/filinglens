@@ -18,8 +18,15 @@ dist/
 coverage/
 *.tsbuildinfo
 
-# Downloaded filings
-data/cache/
+# Generated filing data and model files
+/data/cache/
+/data/parsed/
+/data/enriched/
+/data/chunks/
+/data/models/
+/data/embeddings/
+/data/prepared_chunks/
+/data/embedded_chunks/
 
 # Logs and system files
 *.log
