@@ -3,6 +3,9 @@ from typing import Literal
 import psycopg
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel, Field
+
+from app.answer import answer_question
 
 from app.ingestion.embeddings import EmbeddingError
 from app.retrieval import (
@@ -20,7 +23,7 @@ app.add_middleware(
         "http://localhost:5173",
         "http://127.0.0.1:5173",
     ],
-    allow_methods=["GET"],
+    allow_methods=["GET","POST"],
     allow_headers=["*"],
 )
 
@@ -78,4 +81,46 @@ def search(
         "method": method,
         "count": len(results),
         "results": results,
+    }
+
+class AskRequest(BaseModel):
+    question: str = Field(min_length=1, max_length=1000)
+    ticker: str | None = None
+    year: int | None = Field(default=None, ge=1900, le=2100)
+    section: str | None = None
+    content_type: Literal["prose", "table"] | None = Field(
+        default=None,
+        alias="type",
+    )
+
+
+@app.post("/ask")
+def ask(request: AskRequest):
+    try:
+        result = answer_question(
+            request.question,
+            ticker=request.ticker,
+            fiscal_year=request.year,
+            section=request.section,
+            content_type=request.content_type,
+        )
+    except ValueError as error:
+        raise HTTPException(
+            status_code=400,
+            detail=str(error),
+        ) from None
+    except psycopg.Error:
+        raise HTTPException(
+            status_code=503,
+            detail="Database search is currently unavailable",
+        ) from None
+    except (EmbeddingError, RuntimeError) as error:
+        raise HTTPException(
+            status_code=503,
+            detail=str(error),
+        ) from None
+
+    return {
+        "question": request.question.strip(),
+        **result,
     }

@@ -1,0 +1,122 @@
+[
+  {
+    "id": "q01",
+    "question": "What were Apple's total net sales in fiscal 2024?",
+    "filters": {"ticker": "AAPL", "year": 2024},
+    "answerable": true,
+    "expected_answer": "Total net sales were $391,035 million.",
+    "expected_evidence": "The Total net sales row shows 391,035 for 2024; the table states amounts are in millions."
+  },
+  {
+    "id": "q02",
+    "question": "What were Apple's iPhone net sales in fiscal 2024?",
+    "filters": {"ticker": "AAPL", "year": 2024},
+    "answerable": true,
+    "expected_answer": "iPhone net sales were $201,183 million.",
+    "expected_evidence": "The product sales table shows iPhone net sales of 201,183 for 2024, in millions."
+  },
+  {
+    "id": "q03",
+    "question": "What were Apple's Services net sales in fiscal 2024?",
+    "filters": {"ticker": "AAPL", "year": 2024},
+    "answerable": true,
+    "expected_answer": "Services net sales were $96,169 million.",
+    "expected_evidence": "The Services net sales row shows 96,169 for 2024, in millions."
+  },
+  {
+    "id": "q04",
+    "question": "What was Apple's net income in fiscal 2024?",
+    "filters": {"ticker": "AAPL", "year": 2024},
+    "answerable": true,
+    "expected_answer": "Net income was $93,736 million.",
+    "expected_evidence": "A financial statement shows the Net income row with 93,736 for the year ended September 28, 2024, in millions."
+  },
+  {
+    "id": "q05",
+    "question": "What was Apple's diluted earnings per share in fiscal 2024?",
+    "filters": {"ticker": "AAPL", "year": 2024},
+    "answerable": true,
+    "expected_answer": "Diluted earnings per share were $6.08.",
+    "expected_evidence": "The consolidated statements of operations show Diluted earnings per share of 6.08 for 2024. This is a per-share amount, not millions."
+  },
+  {
+    "id": "q06",
+    "question": "How much did Apple spend on research and development in fiscal 2024?",
+    "filters": {"ticker": "AAPL", "year": 2024},
+    "answerable": true,
+    "expected_answer": "Research and development expense was $31,370 million.",
+    "expected_evidence": "The Research and development expense row shows 31,370 for 2024, in millions."
+  },
+  {
+    "id": "q07",
+    "question": "What were Apple's Greater China net sales in fiscal 2024?",
+    "filters": {"ticker": "AAPL", "year": 2024},
+    "answerable": true,
+    "expected_answer": "Greater China net sales were $66,952 million.",
+    "expected_evidence": "The reportable segment sales table shows Greater China net sales of 66,952 for 2024, in millions."
+  },
+  {
+    "id": "q08",
+    "question": "How much did Apple's Services net sales increase from fiscal 2023 to fiscal 2024?",
+    "filters": {"ticker": "AAPL", "year": 2024},
+    "answerable": true,
+    "expected_answer": "Services net sales increased by $10,969 million, from $85,200 million to $96,169 million, approximately 13%.",
+    "expected_evidence": "Services net sales are 85,200 for 2023 and 96,169 for 2024. Subtracting the values gives 10,969 million."
+  },
+  {
+    "id": "q09",
+    "question": "Did Apple's total net sales increase or decrease from fiscal 2023 to fiscal 2024, and by how much?",
+    "filters": {"ticker": "AAPL", "year": 2024},
+    "answerable": true,
+    "expected_answer": "Total net sales increased by $7,750 million, from $383,285 million to $391,035 million, approximately 2%.",
+    "expected_evidence": "Total net sales are 383,285 for 2023 and 391,035 for 2024. Subtracting the values gives 7,750 million."
+  },
+  {
+    "id": "q10",
+    "question": "What main types of products does Apple sell?",
+    "filters": {"ticker": "AAPL", "year": 2024},
+    "answerable": true,
+    "expected_answer": "Apple sells smartphones, personal computers, tablets, wearables, home products and accessories, including iPhone, Mac and iPad.",
+    "expected_evidence": "The Business section describes iPhone, Mac, iPad, and Wearables, Home and Accessories."
+  },
+  {
+    "id": "q11",
+    "question": "What percentage of Apple's fiscal 2024 net sales came through direct and indirect distribution channels?",
+    "filters": {"ticker": "AAPL", "year": 2024},
+    "answerable": true,
+    "expected_answer": "Direct channels accounted for 38% of total net sales and indirect channels accounted for 62%.",
+    "expected_evidence": "The Markets and Distribution discussion in the Business section states direct and indirect shares of 38% and 62%, respectively."
+  },
+  {
+    "id": "q12",
+    "question": "How can supply-chain disruptions affect Apple's business?",
+    "filters": {"ticker": "AAPL", "year": 2024, "section": "Risk Factors"},
+    "answerable": true,
+    "expected_answer": "Supply-chain disruptions can delay manufacturing and deliveries, increase costs and cause lost sales. Reliance on single or limited suppliers can worsen the impact.",
+    "expected_evidence": "Risk Factors describes manufacturing and delivery interruptions, increased costs, lost sales, and reliance on single or limited sources."
+  },
+  {
+    "id": "q13",
+    "question": "What were Microsoft's total net sales in fiscal 2024?",
+    "filters": {"ticker": "MSFT", "year": 2024},
+    "answerable": false,
+    "expected_answer": "The indexed filings do not contain sufficient evidence to answer this question.",
+    "expected_evidence": "No Microsoft filing is currently indexed. Retrieval should return no matching chunks."
+  },
+  {
+    "id": "q14",
+    "question": "What were Apple's total net sales in fiscal 2025?",
+    "filters": {"ticker": "AAPL", "year": 2025},
+    "answerable": false,
+    "expected_answer": "The indexed filings do not contain sufficient evidence to answer this question.",
+    "expected_evidence": "No Apple fiscal 2025 filing is currently indexed. Retrieval should return no matching chunks."
+  },
+  {
+    "id": "q15",
+    "question": "What will Apple's exact total net sales be in fiscal 2030?",
+    "filters": {"ticker": "AAPL", "year": 2024},
+    "answerable": false,
+    "expected_answer": "Apple's fiscal 2024 filing does not establish exact fiscal 2030 net sales.",
+    "expected_evidence": "Retrieved historical sales or forward-looking statements cannot establish an exact future sales figure."
+  }
+]

@@ -2,6 +2,7 @@
 
 import argparse
 import json
+import re
 
 import psycopg
 from psycopg.rows import dict_row
@@ -37,9 +38,7 @@ def build_filters(
 
     if fiscal_year is not None:
         if not 1900 <= fiscal_year <= 2100:
-            raise ValueError(
-                "Fiscal year must be between 1900 and 2100"
-            )
+            raise ValueError("Fiscal year must be between 1900 and 2100")
 
         conditions.append("f.fiscal_year = %s")
         values.append(fiscal_year)
@@ -163,6 +162,14 @@ def keyword_search(
         content_type,
     )
 
+    # Tables may contain the year without the word "fiscal".
+    keyword_query = re.sub(
+        r"\bfiscal(?:\s+year)?\s+(?=\d{4}\b)",
+        "",
+        query.strip(),
+        flags=re.IGNORECASE,
+    )
+
     with get_connection() as connection:
         with connection.cursor(row_factory=dict_row) as cursor:
             cursor.execute(
@@ -217,7 +224,7 @@ def keyword_search(
                     d.content_type,
                     d.text,
                     d.citation_url,
-                    ts_rank_cd(d.document, q.terms) AS score
+                    ts_rank(d.document, q.terms) AS score
                 FROM documents d
                 CROSS JOIN search_query q
                 WHERE d.document @@ q.terms
@@ -225,7 +232,7 @@ def keyword_search(
                 LIMIT %s
                 """,
                 (
-                    query.strip(),
+                    keyword_query,
                     EMBEDDING_MODEL,
                     EMBEDDING_DIMENSIONS,
                     Jsonb(embedding_profile()),
@@ -279,7 +286,8 @@ def hybrid_search(
                     "keyword_rank": None,
                 }
 
-            combined[chunk_id]["score"] += 1 / (60 + rank)
+            # Give the first few positions more influence.
+            combined[chunk_id]["score"] += 1 / (1 + rank)
             combined[chunk_id][rank_field] = rank
 
     ranked = sorted(

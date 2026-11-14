@@ -1,0 +1,357 @@
+[
+  {
+    "case": {
+      "id": "q01",
+      "question": "What were Apple's total net sales in fiscal 2024?",
+      "filters": {
+        "ticker": "AAPL",
+        "year": 2024
+      },
+      "answerable": true,
+      "expected_answer": "Total net sales were $391,035 million.",
+      "expected_evidence": "The Total net sales row shows 391,035 for 2024; the table states amounts are in millions."
+    },
+    "response": {
+      "question": "What were Apple's total net sales in fiscal 2024?",
+      "status": "answered",
+      "answer": "Apple's total net sales in fiscal 2024 were $391,035 million, as shown in the table in [4].",
+      "sources": [
+        {
+          "chunk_id": "fef3bde0-952c-5421-811c-cbbbada27d34",
+          "ticker": "AAPL",
+          "company": "Apple Inc.",
+          "fiscal_year": 2024,
+          "section": "Financial Statements",
+          "content_type": "table",
+          "text": "Units note: Net sales disaggregated by significant products and services for 2024, 2023 and 2022 were as follows (in millions):\nRow 2: columns 3–5: 2024 | columns 9–11: 2023 | columns 15–17: 2022\nRow 3: columns 0–2: iPhone | 2024: $ 201,183 | 2023: $ 200,583 | 2022: $ 205,489\nRow 4: columns 0–2: Mac | 2024: 29,984 | 2023: 29,357 | 2022: 40,177\nRow 5: columns 0–2: iPad | 2024: 26,694 | 2023: 28,300 | 2022: 29,292\nRow 6: columns 0–2: Wearables, Home and Accessories | 2024: 37,005 | 2023: 39,845 | 2022: 41,241\nRow 7: columns 0–2: Services (1) | 2024: 96,169 | 2023: 85,200 | 2022: 78,129\nRow 8: columns 0–2: Total net sales | 2024: $ 391,035 | 2023: $ 383,285 | 2022: $ 394,328",
+          "citation_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm#i7bfbfbe54b9647b1b4ba4ff4e0aba09d_169",
+          "score": 0.45,
+          "vector_rank": 3,
+          "keyword_rank": 4,
+          "citation_id": 4
+        }
+      ]
+    },
+    "seconds": 7.24
+  },
+  {
+    "case": {
+      "id": "q02",
+      "question": "What were Apple's iPhone net sales in fiscal 2024?",
+      "filters": {
+        "ticker": "AAPL",
+        "year": 2024
+      },
+      "answerable": true,
+      "expected_answer": "iPhone net sales were $201,183 million.",
+      "expected_evidence": "The product sales table shows iPhone net sales of 201,183 for 2024, in millions."
+    },
+    "response": {
+      "status": "error",
+      "answer": "{\"detail\":\"The model returned an answer without citations\"}",
+      "sources": []
+    },
+    "seconds": 2.97
+  },
+  {
+    "case": {
+      "id": "q03",
+      "question": "What were Apple's Services net sales in fiscal 2024?",
+      "filters": {
+        "ticker": "AAPL",
+        "year": 2024
+      },
+      "answerable": true,
+      "expected_answer": "Services net sales were $96,169 million.",
+      "expected_evidence": "The Services net sales row shows 96,169 for 2024, in millions."
+    },
+    "response": {
+      "status": "error",
+      "answer": "{\"detail\":\"The model returned an answer without citations\"}",
+      "sources": []
+    },
+    "seconds": 2.32
+  },
+  {
+    "case": {
+      "id": "q04",
+      "question": "What was Apple's net income in fiscal 2024?",
+      "filters": {
+        "ticker": "AAPL",
+        "year": 2024
+      },
+      "answerable": true,
+      "expected_answer": "Net income was $93,736 million.",
+      "expected_evidence": "A financial statement shows the Net income row with 93,736 for the year ended September 28, 2024, in millions."
+    },
+    "response": {
+      "question": "What was Apple's net income in fiscal 2024?",
+      "status": "answered",
+      "answer": "Apple's net income in fiscal 2024 was $93,736 million. [2]",
+      "sources": [
+        {
+          "chunk_id": "f2b00ce1-6600-59c3-b58e-67721c8cda55",
+          "ticker": "AAPL",
+          "company": "Apple Inc.",
+          "fiscal_year": 2024,
+          "section": "Financial Statements",
+          "content_type": "table",
+          "text": "Title: CONSOLIDATED STATEMENTS OF COMPREHENSIVE INCOME\nUnits note: (In millions)\nRow 2: columns 3–17: Years ended\nRow 3: columns 3–5: September 28, 2024 | columns 9–11: September 30, 2023 | columns 15–17: September 24, 2022\nRow 4: columns 0–2: Net income | September 28, 2024: $ 93,736 | September 30, 2023: $ 96,995 | September 24, 2022: $ 99,803\nRow 5: columns 0–2: Other comprehensive income/(loss):\nRow 6: columns 0–2: Change in foreign currency translation, net of tax | September 28, 2024: 395 | September 30, 2023: ( 765 ) | September 24, 2022: ( 1,511 )\nRow 8: columns 0–2: Change in unrealized gains/losses on derivative instruments, net of tax:\nRow 9: columns 0–2: Change in fair value of derivative instruments | September 28, 2024: ( 832 ) | September 30, 2023: 323 | September 24, 2022: 3,212\nRow 10: columns 0–2: Adjustment for net (gains)/losses realized and included in net income | September 28, 2024: ( 1,337 ) | September 30, 2023: ( 1,717 ) | September 24, 2022: ( 1,074 )\nRow 11: columns 0–2: Total change in unrealized gains/losses on derivative instruments | September 28, 2024: ( 2,169 ) | September 30, 2023: ( 1,394 ) | September 24, 2022: 2,138\nRow 13: columns 0–2: Change in unrealized gains/losses on marketable debt securities, net of tax:\nRow 14: columns 0–2: Change in fair value of marketable debt securities | September 28, 2024: 5,850 | September 30, 2023: 1,563 | September 24, 2022: ( 12,104 )\nRow 15: columns 0–2: Adjustment for net (gains)/losses realized and included in net income | September 28, 2024: 204 | September 30, 2023: 253 | September 24, 2022: 205",
+          "citation_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm#i7bfbfbe54b9647b1b4ba4ff4e0aba09d_169",
+          "score": 0.5,
+          "vector_rank": null,
+          "keyword_rank": 1,
+          "citation_id": 2
+        }
+      ]
+    },
+    "seconds": 3.88
+  },
+  {
+    "case": {
+      "id": "q05",
+      "question": "What was Apple's diluted earnings per share in fiscal 2024?",
+      "filters": {
+        "ticker": "AAPL",
+        "year": 2024
+      },
+      "answerable": true,
+      "expected_answer": "Diluted earnings per share were $6.08.",
+      "expected_evidence": "The consolidated statements of operations show Diluted earnings per share of 6.08 for 2024. This is a per-share amount, not millions."
+    },
+    "response": {
+      "question": "What was Apple's diluted earnings per share in fiscal 2024?",
+      "status": "answered",
+      "answer": "Apple's diluted earnings per share (EPS) in fiscal 2024 was $6.08. [1]",
+      "sources": [
+        {
+          "chunk_id": "563f29a9-6e43-53f6-a04a-d60cf5901b5f",
+          "ticker": "AAPL",
+          "company": "Apple Inc.",
+          "fiscal_year": 2024,
+          "section": "Financial Statements",
+          "content_type": "table",
+          "text": "Title: Note 3 – Earnings Per Share\nUnits note: The following table shows the computation of basic and diluted earnings per share for 2024, 2023 and 2022 (net income in millions and shares in thousands):\nRow 2: columns 3–5: 2024 | columns 9–11: 2023 | columns 15–17: 2022\nRow 3: columns 0–2: Numerator:\nRow 4: columns 0–2: Net income | 2024: $ 93,736 | 2023: $ 96,995 | 2022: $ 99,803\nRow 6: columns 0–2: Denominator:\nRow 7: columns 0–2: Weighted-average basic shares outstanding | 2024: 15,343,783 | 2023: 15,744,231 | 2022: 16,215,963\nRow 8: columns 0–2: Effect of dilutive share-based awards | 2024: 64,312 | 2023: 68,316 | 2022: 109,856\nRow 9: columns 0–2: Weighted-average diluted shares | 2024: 15,408,095 | 2023: 15,812,547 | 2022: 16,325,819\nRow 11: columns 0–2: Basic earnings per share | 2024: $ 6.11 | 2023: $ 6.16 | 2022: $ 6.15\nRow 12: columns 0–2: Diluted earnings per share | 2024: $ 6.08 | 2023: $ 6.13 | 2022: $ 6.11",
+          "citation_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm#i7bfbfbe54b9647b1b4ba4ff4e0aba09d_169",
+          "score": 0.5625,
+          "vector_rank": 15,
+          "keyword_rank": 1,
+          "citation_id": 1
+        }
+      ]
+    },
+    "seconds": 2.96
+  },
+  {
+    "case": {
+      "id": "q06",
+      "question": "How much did Apple spend on research and development in fiscal 2024?",
+      "filters": {
+        "ticker": "AAPL",
+        "year": 2024
+      },
+      "answerable": true,
+      "expected_answer": "Research and development expense was $31,370 million.",
+      "expected_evidence": "The Research and development expense row shows 31,370 for 2024, in millions."
+    },
+    "response": {
+      "question": "How much did Apple spend on research and development in fiscal 2024?",
+      "status": "insufficient_evidence",
+      "answer": "The indexed filings do not contain sufficient evidence to answer this question.",
+      "sources": []
+    },
+    "seconds": 1.99
+  },
+  {
+    "case": {
+      "id": "q07",
+      "question": "What were Apple's Greater China net sales in fiscal 2024?",
+      "filters": {
+        "ticker": "AAPL",
+        "year": 2024
+      },
+      "answerable": true,
+      "expected_answer": "Greater China net sales were $66,952 million.",
+      "expected_evidence": "The reportable segment sales table shows Greater China net sales of 66,952 for 2024, in millions."
+    },
+    "response": {
+      "status": "error",
+      "answer": "{\"detail\":\"The model returned an answer without citations\"}",
+      "sources": []
+    },
+    "seconds": 3.35
+  },
+  {
+    "case": {
+      "id": "q08",
+      "question": "How much did Apple's Services net sales increase from fiscal 2023 to fiscal 2024?",
+      "filters": {
+        "ticker": "AAPL",
+        "year": 2024
+      },
+      "answerable": true,
+      "expected_answer": "Services net sales increased by $10,969 million, from $85,200 million to $96,169 million, approximately 13%.",
+      "expected_evidence": "Services net sales are 85,200 for 2023 and 96,169 for 2024. Subtracting the values gives 10,969 million."
+    },
+    "response": {
+      "status": "error",
+      "answer": "{\"detail\":\"The model returned an answer without citations\"}",
+      "sources": []
+    },
+    "seconds": 3.54
+  },
+  {
+    "case": {
+      "id": "q09",
+      "question": "Did Apple's total net sales increase or decrease from fiscal 2023 to fiscal 2024, and by how much?",
+      "filters": {
+        "ticker": "AAPL",
+        "year": 2024
+      },
+      "answerable": true,
+      "expected_answer": "Total net sales increased by $7,750 million, from $383,285 million to $391,035 million, approximately 2%.",
+      "expected_evidence": "Total net sales are 383,285 for 2023 and 391,035 for 2024. Subtracting the values gives 7,750 million."
+    },
+    "response": {
+      "question": "Did Apple's total net sales increase or decrease from fiscal 2023 to fiscal 2024, and by how much?",
+      "status": "answered",
+      "answer": "Apple's total net sales increased from fiscal 2023 to fiscal 2024, by $7,750 million. [4]",
+      "sources": [
+        {
+          "chunk_id": "fef3bde0-952c-5421-811c-cbbbada27d34",
+          "ticker": "AAPL",
+          "company": "Apple Inc.",
+          "fiscal_year": 2024,
+          "section": "Financial Statements",
+          "content_type": "table",
+          "text": "Units note: Net sales disaggregated by significant products and services for 2024, 2023 and 2022 were as follows (in millions):\nRow 2: columns 3–5: 2024 | columns 9–11: 2023 | columns 15–17: 2022\nRow 3: columns 0–2: iPhone | 2024: $ 201,183 | 2023: $ 200,583 | 2022: $ 205,489\nRow 4: columns 0–2: Mac | 2024: 29,984 | 2023: 29,357 | 2022: 40,177\nRow 5: columns 0–2: iPad | 2024: 26,694 | 2023: 28,300 | 2022: 29,292\nRow 6: columns 0–2: Wearables, Home and Accessories | 2024: 37,005 | 2023: 39,845 | 2022: 41,241\nRow 7: columns 0–2: Services (1) | 2024: 96,169 | 2023: 85,200 | 2022: 78,129\nRow 8: columns 0–2: Total net sales | 2024: $ 391,035 | 2023: $ 383,285 | 2022: $ 394,328",
+          "citation_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm#i7bfbfbe54b9647b1b4ba4ff4e0aba09d_169",
+          "score": 0.25,
+          "vector_rank": 3,
+          "keyword_rank": null,
+          "citation_id": 4
+        }
+      ]
+    },
+    "seconds": 2.63
+  },
+  {
+    "case": {
+      "id": "q10",
+      "question": "What main types of products does Apple sell?",
+      "filters": {
+        "ticker": "AAPL",
+        "year": 2024
+      },
+      "answerable": true,
+      "expected_answer": "Apple sells smartphones, personal computers, tablets, wearables, home products and accessories, including iPhone, Mac and iPad.",
+      "expected_evidence": "The Business section describes iPhone, Mac, iPad, and Wearables, Home and Accessories."
+    },
+    "response": {
+      "status": "error",
+      "answer": "{\"detail\":\"The model returned an answer without citations\"}",
+      "sources": []
+    },
+    "seconds": 3.13
+  },
+  {
+    "case": {
+      "id": "q11",
+      "question": "What percentage of Apple's fiscal 2024 net sales came through direct and indirect distribution channels?",
+      "filters": {
+        "ticker": "AAPL",
+        "year": 2024
+      },
+      "answerable": true,
+      "expected_answer": "Direct channels accounted for 38% of total net sales and indirect channels accounted for 62%.",
+      "expected_evidence": "The Markets and Distribution discussion in the Business section states direct and indirect shares of 38% and 62%, respectively."
+    },
+    "response": {
+      "question": "What percentage of Apple's fiscal 2024 net sales came through direct and indirect distribution channels?",
+      "status": "insufficient_evidence",
+      "answer": "The indexed filings do not contain sufficient evidence to answer this question.",
+      "sources": []
+    },
+    "seconds": 3.29
+  },
+  {
+    "case": {
+      "id": "q12",
+      "question": "How can supply-chain disruptions affect Apple's business?",
+      "filters": {
+        "ticker": "AAPL",
+        "year": 2024,
+        "section": "Risk Factors"
+      },
+      "answerable": true,
+      "expected_answer": "Supply-chain disruptions can delay manufacturing and deliveries, increase costs and cause lost sales. Reliance on single or limited suppliers can worsen the impact.",
+      "expected_evidence": "Risk Factors describes manufacturing and delivery interruptions, increased costs, lost sales, and reliance on single or limited sources."
+    },
+    "response": {
+      "status": "error",
+      "answer": "{\"detail\":\"The model returned an answer without citations\"}",
+      "sources": []
+    },
+    "seconds": 2.56
+  },
+  {
+    "case": {
+      "id": "q13",
+      "question": "What were Microsoft's total net sales in fiscal 2024?",
+      "filters": {
+        "ticker": "MSFT",
+        "year": 2024
+      },
+      "answerable": false,
+      "expected_answer": "The indexed filings do not contain sufficient evidence to answer this question.",
+      "expected_evidence": "No Microsoft filing is currently indexed. Retrieval should return no matching chunks."
+    },
+    "response": {
+      "question": "What were Microsoft's total net sales in fiscal 2024?",
+      "status": "insufficient_evidence",
+      "answer": "The indexed filings do not contain sufficient evidence to answer this question.",
+      "sources": []
+    },
+    "seconds": 0.18
+  },
+  {
+    "case": {
+      "id": "q14",
+      "question": "What were Apple's total net sales in fiscal 2025?",
+      "filters": {
+        "ticker": "AAPL",
+        "year": 2025
+      },
+      "answerable": false,
+      "expected_answer": "The indexed filings do not contain sufficient evidence to answer this question.",
+      "expected_evidence": "No Apple fiscal 2025 filing is currently indexed. Retrieval should return no matching chunks."
+    },
+    "response": {
+      "question": "What were Apple's total net sales in fiscal 2025?",
+      "status": "insufficient_evidence",
+      "answer": "The indexed filings do not contain sufficient evidence to answer this question.",
+      "sources": []
+    },
+    "seconds": 0.15
+  },
+  {
+    "case": {
+      "id": "q15",
+      "question": "What will Apple's exact total net sales be in fiscal 2030?",
+      "filters": {
+        "ticker": "AAPL",
+        "year": 2024
+      },
+      "answerable": false,
+      "expected_answer": "Apple's fiscal 2024 filing does not establish exact fiscal 2030 net sales.",
+      "expected_evidence": "Retrieved historical sales or forward-looking statements cannot establish an exact future sales figure."
+    },
+    "response": {
+      "question": "What will Apple's exact total net sales be in fiscal 2030?",
+      "status": "insufficient_evidence",
+      "answer": "The indexed filings do not contain sufficient evidence to answer this question.",
+      "sources": []
+    },
+    "seconds": 0.46
+  }
+]
