@@ -71,7 +71,13 @@ INSUFFICIENT_EVIDENCE
 {question}
 </question>
 
-Answer:
+Write one or two sentences.
+End each factual sentence with its supporting evidence ID in square
+brackets, for example [1]. Use the actual IDs above, not the example
+unless it supports the claim.
+If evidence is insufficient, output only INSUFFICIENT_EVIDENCE.
+
+Answer with citations:
 """
 
     answer = generate_text(prompt)
